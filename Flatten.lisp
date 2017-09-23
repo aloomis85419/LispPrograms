@@ -1,11 +1,12 @@
-;;  Aaron Loomis – CS 3210 – Fall 2017
-;;  ============================================
-;;  flatten: Receives a list of arbitrary depth, and returns a list containing all the same elements, in the same order, but now at the top level.  
-;;  Note that flattening an embedded NIL (empty list) removes it.
-;;  parameters:
+;;Aaron Loomis – CS 3210 – Fall 2017
+;;============================================
+;;flatten: Receives a list of arbitrary depth, and returns a list containing all the same elements, in the same order, but now at the top level.  
+;;Note that flattening an embedded NIL (empty list) removes it.
+;;Parameters:
 ;;       lst – a list of elements of arbitrary type.
-;;  assumptions: None
-;; ALL TESTS PASS
+;;Assumptions: None
+;;ALL TESTS PASS
+;;FINISHED
 
 (defun flatten (lst)
 (cond 

@@ -7,6 +7,7 @@
 ;;  assumptions: 
 ;;		1. the list is not nested, no more than two identical elements will be adjacent.
 ;; ALL TESTS PASS
+;; FINISHED
 
 (defun twin(lst)
 (cond

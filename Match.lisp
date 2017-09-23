@@ -9,6 +9,7 @@
 ;;	1.Handles integers only
 ;;Helper Methods: None	
 ;;ALL CASES PASSED
+;;FINISHED
 
 (defun match(countNum lst)
 (cond

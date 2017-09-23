@@ -13,7 +13,7 @@
 ;;	wordSearch: Returns true if the word passed in is in the list. False if not.
 ;;	testLength: checks to see if the length of the word list is 0.
 ;;  reOrder: If the word is in the list, reOrder places it at the front of the list. 
-;;ALL TESTS PASSED
+;;ONE TEST IS NOT PASSING
 
 (defun wordSearch(searchWord dictionary)
 (cond
@@ -29,17 +29,20 @@
 (defun reOrder(word dict)
 (cond
 ((equal word (car dict))dict)
-((not(equal word (car dict)))(reOrder word (append (cdr dict)(list (car dict))) ) ) ) ) 
+((not(equal word (car dict)))(reOrder word (cons (car dict)(reOrder word (cdr dict))))))) 
 	
 (defun testLength(dict)
 (= (length dict) 0))
 	
-;;  test plan for wordSearch :
+;; I BELIEVE THIS TESTS ALL HELPER METHODS AND SPECIFICATIONS FOR THE PROGRAM
+;;  test plan for make-recent:
 ;;  category / description		         data		                         expected result
 ;;  ----------------------------------------------------------------------------------------------------
 ;;  empty list					         "bob", ()			                 ("bob") 
 ;;  nil passed as searchword 	         nil,("bob" "cat")	                 (nil "bob" "cat")
 ;;  searchWord not in list		         "bob",("cat")		                 ("bob" "cat")
-;;	searchWord in list(2)                "bob",("cat")                       ("bob" "cat") note: No new word is added. Position of bob is what changed.
+;;	searchWord in list                   "bob",("cat","bob")                 ("bob" "cat") note: No new word is added. Position of bob is what changed.
 ;;  number that is a string   	         "1" ,("cat")		                 ("1" "cat")	  note: 1 might have quotes around it.
-;;  nil as search word and empty list    nil, ()                       		  NIL
+;;  nil as search word and empty list    nil, ()                       		 NIL
+;;  long list searchword in list		 'bob '(jerry bob terry)			 (bob jerry terry)	;;NOT PASSING	
+	

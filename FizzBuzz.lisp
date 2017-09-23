@@ -12,10 +12,11 @@
 ;;    1. No nested lists are passed in
 ;;    2. All list elements are integers 
 ;;    3. no duplicates
-;; Helper functions izFizz, isBuzz, isFizzBuzz are boolean functions that determine if a number is divisible by 3 or 5. 
-;; 		print: provides a way to insert sublists into another list with a message for those values which are divisible by 3 or 5. (3 fizz) (5 buzz) (3&5 fizzbuzz)
-;;REVISE AND IMPROVE
+;; Helper functions: izFizz, isBuzz, isFizzBuzz are boolean functions that determine if a number is divisible by 3 or 5. 
+;;ALL TESTS PASS
+;;FINISHED
 
+;;TRIVIAL METHODS
 (defun is-fizz(num)
   (= (mod num 3) 0))
 
@@ -24,6 +25,7 @@
 
 (defun is-fizz-buzz(num)
   (and (is-fizz num) (is-buzz num)))
+;;END OF TRIVIAL METHODS
   		
 (defun fizzbuzz(lst)
 (cond 
@@ -32,6 +34,8 @@
 ((is-fizz (car lst)) (cons (append (list (car lst)) '(fizz)) (fizzbuzz (cdr lst))))
 ((is-buzz (car lst)) (cons (append (list (car lst)) '(buzz)) (fizzbuzz  (cdr lst))))
 (t      (cons (car lst)(fizzbuzz(cdr lst))))))
+
+
 		
 ;; Test plan for fizzbuzz:
 ;; category/description            data                                                 expected result

@@ -11,7 +11,10 @@
 ;;		2. The list consists of integers.
 ;;helper methods: 
 ;;		inversions: counts the number of elements that arent in sorted order.
+;;parameters:
+;;		lst - a list of elements of arbitrary type.
 ;;ALL TESTS PASS
+;;FINISHED
 
 (defun count-inversions(lst)
 (cond
@@ -21,6 +24,7 @@
 
 (defun is-almost-sorted(lst)
 (cond 
+((null lst)nil)
 ((equal (count-inversions lst) 0) 'sorted)    
 ((<= (count-inversions lst) (* .2 (length lst))))))
 
@@ -36,7 +40,7 @@
 ;;  test plan for is-almost-sorted:
 ;;  category / description		                				data		                       									expected result
 ;;  ------------------------------------------------------------------------------------------------------------------------------------------------
-;;  empty list													'()																	 false
+;;  empty list													'()																	 NIL
 ;;  singleton list												'(5)																 NIL
 ;;  no inversions												'(7 8 9 10)															 NIL
 ;;	one inversion												'(1 2 3 5 4 6 7 8)													 T
